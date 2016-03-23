@@ -30,7 +30,7 @@ export function generate(fileName: string, text: string, extOptions: ExternalOpt
         ts.ScriptTarget.ES6,
         false
     );
-
+    var x = ts.SyntaxKind.EndOfFileToken;
     let templatesFolder = path.join(__dirname, '../templates');
     let [ifaces, imports] = walker(sourceFile);
     let template = readFileSync(path.join(templatesFolder, 'file.ejs')).toString();
@@ -38,7 +38,7 @@ export function generate(fileName: string, text: string, extOptions: ExternalOpt
 
     let flatImports = {};
     imports.forEach((imp) => {
-        if (imp.importClause && imp.importClause.namedBindings) {
+        if (imp.importClause && imp.importClause.namedBindings && imp.importClause.namedBindings.elements) {
             imp.importClause.namedBindings.elements.forEach(el => {
                 flatImports[el.name.text] = true;
             })
@@ -242,7 +242,11 @@ export function generate(fileName: string, text: string, extOptions: ExternalOpt
     }
 
     options.exportDeps = functions.exportDeps();
-
+    _.forEach(options.ifaces, function(x) {
+		x.members = _.filter(x.members, function(m: any){
+			return m.name && m.name.text;
+		});
+	});
     let result = ejs.render(
         template,
         options,
