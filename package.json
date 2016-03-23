@@ -1,6 +1,6 @@
 {
   "name": "tsimmutable",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "TypeScript code generator for ImmutableJS",
   "main": "dist/index.js",
   "repository": {
@@ -29,11 +29,11 @@
   "author": "Stanislav Panferov <fnight.m@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^2.3.3",
-    "immutable": "^3.7.4",
+    "ejs": "^2.4.1",
+    "immutable": "^3.7.6",
     "lodash": "^3.10.0",
     "minimist": "^1.1.2",
-    "typescript": "1.6.0-dev.20150806"
+    "typescript": "1.8.7"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^0.10.0",

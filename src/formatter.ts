@@ -37,6 +37,7 @@ export function format(text: string) {
     function getDefaultOptions(): ts.FormatCodeOptions {
         return {
             IndentSize: 4,
+            IndentStyle: ts.IndentStyle.Smart,
             TabSize: 4,
             NewLineCharacter: '\r\n',
             ConvertTabsToSpaces: true,
@@ -46,6 +47,8 @@ export function format(text: string) {
             InsertSpaceAfterKeywordsInControlFlowStatements: true,
             InsertSpaceAfterFunctionKeywordForAnonymousFunctions: false,
             InsertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,
+            InsertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets: false,
+            InsertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces: false,            
             PlaceOpenBraceOnNewLineForFunctions: false,
             PlaceOpenBraceOnNewLineForControlBlocks: false,
         };
