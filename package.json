@@ -1,6 +1,6 @@
 {
   "name": "tsimmutable",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "TypeScript code generator for ImmutableJS",
   "main": "dist/index.js",
   "repository": {
